@@ -1,0 +1,123 @@
+body {
+    background: linear-gradient(to bottom, #242635 10%, #0e0f14 60%);
+    margin: 0;
+    background-attachment: fixed;
+    color: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 6rem; /* Reduzido de 2rem para 1rem */
+}
+
+h1 {
+    font-size: 6rem;
+    background: linear-gradient(90deg, #ffffff, #ffffff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    
+    /* 1. MANTÉM O H1 AFASTADO DO TOPO */
+    margin-top: 100px;    /* Ajuste esse valor (px) até a altura que você deseja */
+    
+    /* 2. ENCOSTA O SLOGAN NO H1 */
+    line-height: 0.8;     /* Reduz a "caixa" invisível do texto */
+    margin-bottom: 10px;  /* Espaço exato entre o H1 e o Slogan */
+    
+    display: block;
+}
+
+.slogan {
+    color: #ffffff;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    margin-top: 0;        /* Deixe em 0 para o H1 controlar a distância */
+    display: block;
+}
+
+main {
+    width: 100%;
+    max-width: 1200px; /* Aumentei um pouco para caber os cards grandes */
+    margin: 0 auto;    /* Centraliza o conteúdo principal */
+}
+
+h2 {
+    text-align: center;
+    font-size: 3.5rem;  /* Ajustado para não brigar com o H1 */
+    color: #64748b;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.cards {
+    display: flex;          
+    flex-direction: row;    
+    justify-content: center; 
+    align-items: stretch;   
+    gap: 20px;              
+    width: 100%;
+    margin: 20px auto;      
+}
+
+.card {
+    flex: 1;                
+    min-width: 280px;       /* Ajustado para caber 3 lado a lado em telas 1080p */
+    background: rgba(30, 41, 59, 0.5);
+    border: 2px solid #334155;
+    border-radius: 12px;
+    padding: 40px;          /* 60px era muito, pode empurrar o conteúdo pra fora */
+    text-align: center;
+    transition: transform 0.3s ease; /* Adicionei a transição para o hover ficar suave */
+}
+
+.card:hover {
+    transform: translateY(-5px); 
+}
+
+.card h3 {
+    color: #c5cde2;
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.card span {
+    font-size: 2.2rem;
+    font-weight: 800;
+    display: block;
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+}
+
+.alerta-critico {
+    background: rgba(127, 29, 29, 0.4) !important; 
+    border: 2px solid #ef4444 !important; 
+    animation: flicker 1.5s infinite; 
+}
+
+.alerta-critico h3, .alerta-critico span {
+    color: #f87171 !important;
+}
+
+@keyframes flicker {
+    0%, 100% { box-shadow: 0 0 10px rgba(239, 68, 68, 0.2); }
+    50% { box-shadow: 0 0 25px rgba(239, 68, 68, 0.5); }
+}
+
+footer {
+    margin-top: auto;
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #475569;
+}
+
+footer strong {
+    color: #818cf8;
+}

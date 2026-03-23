@@ -1,0 +1,98 @@
+body {
+    background: linear-gradient(to bottom, #3a4379 10%, #131313 60%);
+    min-height: 100vh;
+    margin: 0;
+    background-attachment: fixed;
+    color: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;           /* ATENÇÃO: Sem isso, o align-items não funciona */
+    flex-direction: column;  /* Faz o H1 e o P ficarem um embaixo do outro */
+    align-items: flex-start; /* Alinha o texto à esquerda DENTRO do flex */
+    justify-content: center; /* Centraliza verticalmente se houver altura */
+    
+    max-width: 1000px; 
+    margin: 20px auto;       /* Atalho para: 20px em cima/baixo e AUTO nas laterais (centraliza o bloco) */
+    
+    padding: 20px;
+    text-align: left;        /* Garante o alinhamento do texto à esquerda */
+}
+
+/* Estilo da foto de perfil (Beabadoobee.avif) */
+.foto img {
+    width: 400px;           
+    height: auto;
+    border-radius: 20px;    /* Arredondado suave para a foto de perfil */
+
+}
+
+.bio {
+    max-width: 500px;       
+}
+
+.bio p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* --- 2. CONTAINER DOS DISCOS (GALERIA) --- */
+.discos {
+    display: flex;
+    justify-content: center; /* Centraliza o grupo de discos */
+    gap: 60px;               /* AFSTAMENTO: Espaço entre um disco e outro */
+    flex-wrap: wrap;         /* Permite que eles pulem de linha se a tela for pequena */
+    padding: 50px;
+}
+
+/* Cada bloco individual (div que contém áudio, imagem e p) */
+.TakeABite, .ThePerfectPair, .TheWayThingsGo {
+    display: flex;
+    flex-direction: column;  /* Alinha a imagem e o texto verticalmente */
+    align-items: center;     /* Centraliza o texto embaixo da imagem */
+    text-align: center;
+}
+
+/* Estilo das imagens dos discos (REDONDAS E COM EFEITO) */
+.discos img {
+    width: 200px;            /* Largura fixa */
+    height: 200px;           /* Altura igual para garantir o círculo perfeito */
+    object-fit: cover;       /* Não deixa a imagem esticar dentro do círculo */
+    border-radius: 50%;      /* DEIXA REDONDO */
+    
+    border: 5px solid hsl(0, 88%, 23%); /* Borda Rosa */
+    box-shadow: 0px 0px 20px hsl(0, 88%, 23%); /* Brilho Rosa Redondo */
+    
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+/* Efeito ao passar o mouse nos discos */
+.discos img:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 40px hsl(0, 88%, 23%); /* Aumenta o brilho rosa */
+}
+
+/* Legendas abaixo dos discos */
+.discos p {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* --- 3. RESPONSIVIDADE (PARA CELULAR) --- */
+@media (max-width: 768px) {
+    .sobre {
+        flex-direction: column; /* Foto fica em cima do texto no celular */
+        text-align: center;
+    }
+    
+    .discos {
+        gap: 30px; /* Diminui o espaço no celular para caber melhor */
+    }
+}
